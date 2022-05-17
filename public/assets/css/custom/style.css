@@ -1,0 +1,49 @@
+img {
+    pointer-events: none;
+    border: 2px solid;
+}
+
+.mx-green {
+    color: #5eac1a;
+}
+
+.mx-bold {
+    font-weight: 700;
+}
+
+#pagination {
+    display: inline-block;
+    padding-left: 0;
+    border-radius: 4px;
+}
+
+#pagination a, #pagination strong {
+    position: relative;
+    float: left;
+    padding: 6px 12px;
+    margin-left: -1px;
+    line-height: 1.42857143;
+    color: #4c4d4c;
+    text-decoration: none;
+    background-color: #fff;
+    border: 1px solid #ddd;
+}
+
+#pagination strong {
+    color: #FFF;
+    background-color: #4c4d4c;
+}
+
+div.section {
+    border-bottom: 2px solid;
+}
+
+nav.navbar-main {
+    background-color: #fff;
+    border-bottom: .5px solid #dfdfdf;
+}
+
+
+
+
+
