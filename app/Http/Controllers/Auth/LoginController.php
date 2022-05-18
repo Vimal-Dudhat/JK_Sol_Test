@@ -13,9 +13,10 @@ class LoginController extends Controller
     {
 
         $user = User::where('user_name',$request->user_name)->where('password',$request->password)->first();
- 
-        if ($user) {
+        // dd($user->toArray());
+        if (isset($user)) {
             // Authentication passed...
+            Auth::login($user);
             return redirect()->intended('dashboard');
         }
         else

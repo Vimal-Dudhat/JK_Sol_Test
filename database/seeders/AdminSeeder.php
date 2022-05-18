@@ -15,15 +15,6 @@ class AdminSeeder extends Seeder
      */
     public function run()
     {
-        User::truncate();
-        
-        $user = new User();
-        $user->user_name = "vimal";
-        $user->name = "Vimal Dudhat";
-        $user->email = "vimaldudhat@gmail.com";
-        $user->role = 1;
-        // $user->password = Hash::make('1234');
-        $user->password = '1234';
-        $user->save();
+        User::updateOrCreate(['user_name'=>"vimal",'name'=>'Vimal Dudhat','email'=>'vimal@gmail.com','password'=>'1234','role'=>'1']);
     }
 }

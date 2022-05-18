@@ -170,134 +170,16 @@
         </div>
         <div class="row">
             <div class="col-lg-12 clear-padding-xs">
-                <div class="col-sm-3">
+                <div class="col-sm-12">
                     <div class="dash-item first-dash-item">
-                        <h6 class="item-title"><i class="fa fa-plus-circle"></i>ADD CANDIDATE</h6>
-                        <div class="inner-item">
-                            <form id="myform" method="post" enctype="multipart/form-data">
-                                <div class="dash-form">
-
-                                    <label class="clear-top-margin"><i class="fa fa-tasks"></i>NAME</label>
-                                    <input placeholder="Enter Candidate Name" name="c_name">
-
-                                    <label><i class="fa fa-tasks"></i>GENDER</label>
-                                   <select name="c_gender">
-                                       <option value="">Select Gender</option>
-                                       <option value="1">Male</option>
-                                       <option value="2">Female</option>
-                                   </select>
-
-                                    <label><i class="fa fa-tasks"></i>EMAIL</label>
-                                    <input type="email" placeholder="Enter Email" name="c_email">
-
-
-                                    <label><i class="fa fa-tasks"></i>MOBILE NUMBER</label>
-                                    <input type="number" placeholder="Enter Mobile Number" name="c_mobile">
-
-                                    <label><i class="fa fa-tasks"></i>DEPARTMENT</label>
-                                    <input placeholder="Enter Department" name="c_department">
-
-
-                                    <label><i class="fa fa-user-secret"></i>USERNAME</label>
-                                    <input placeholder="Enter Username" name="c_user_name">
-
-
-                                    <label><i class="fa fa-key"></i>PASSWORD</label>
-                                    <input placeholder="Enter Password" name="c_password">
-
-
-                                    <label><i class="fa fa-clock-o"></i>TIME ( MINUTE )</label>
-                                    <input type='number' placeholder="Enter Time in Minute" name="c_time">
-
-                                    <!---->
-                                    <!--                                    <label><i class="fa fa-tasks"></i>Total Questions</label>-->
-                                    <!--                                    <input type='number' placeholder="Enter Number of Questions" name="t_questions" min="1" max="-->
-                                    <? //=$total_questions?><!--" >-->
-                                    <!---->
-
-                                    <div>
-                                        <label><i class="fa fa-pencil"></i>TEST MODE</label>
-                                        <div class="custom-control custom-radio custom-control-inline">
-                                            <input type="radio" class="custom-control-input" id="defaultInline4"
-                                                   name="t_mode" value="1">
-                                            <label class="custom-control-label color-gray" for="defaultInline4">Very
-                                                Easy</label>
-                                        </div>
-
-                                        <div class="custom-control custom-radio custom-control-inline">
-                                            <input type="radio" class="custom-control-input" id="defaultInline5"
-                                                   name="t_mode" value="2">
-                                            <label class="custom-control-label color-gray"
-                                                   for="defaultInline5">Easy</label>
-                                        </div>
-
-                                        <div class="custom-control custom-radio custom-control-inline">
-                                            <input type="radio" class="custom-control-input" id="defaultInline6"
-                                                   name="t_mode" value="3">
-                                            <label class="custom-control-label color-gray"
-                                                   for="defaultInline6">Medium</label>
-                                        </div>
-
-                                        <div class="custom-control custom-radio custom-control-inline">
-                                            <input type="radio" class="custom-control-input" id="defaultInline60"
-                                                   name="t_mode" value="4">
-                                            <label class="custom-control-label color-gray"
-                                                   for="defaultInline60">Hard</label>
-                                        </div>
-
-                                        <div class="custom-control custom-radio custom-control-inline">
-                                            <input type="radio" class="custom-control-input" id="defaultInline61"
-                                                   name="t_mode" value="5">
-                                            <label class="custom-control-label color-gray" for="defaultInline61">Very
-                                                Hard</label>
-                                        </div>
-
-                                        <label id="t_mode-error" class="error" for="t_mode"></label>
-                                    </div>
-
-                                    <label><i class="fa fa-key"></i>ADDRESS</label>
-                                    <textarea placeholder="Enter Address" name="c_address"></textarea>
-
-                                    <label><i class="fa fa-key"></i>EDUCATION</label>
-                                    <textarea placeholder="Enter Education" name="c_education"></textarea>
-
-                                    <label><i class="fa fa-file"></i>SKILL</label>
-                                    <input name="c_skill">
-
-                                    <label><i class="fa fa-file"></i>CURRENT SALARY</label>
-                                    <input type="number" name="c_current_salary">
-
-                                    <label><i class="fa fa-file"></i>EXPECTED SALARY</label>
-                                    <input type="number" name="c_expected_salary">
-
-                                    <label><i class="fa fa-tasks"></i>NOTICE PERIOD</label>
-                                    <select name="c_notice_period">
-                                        <option value="">Select Notice Period</option>
-                                        <option value="4">Immediate </option>
-                                        <option value="1">1 Month</option>
-                                        <option value="2">2 Month</option>
-                                        <option value="3">3 Month</option>
-                                    </select>
-
-                                    <label><i class="fa fa-file"></i>TOTAL EXPERIENCE</label>
-                                    <input name="c_total_experience">
-
-                                    <label><i class="fa fa-file"></i>Resume</label>
-                                    <input type="file" name="c_resume">
-
-                                    <div>
-                                        <a href="#" class="form-submit"><i class="fa fa-paper-plane"></i> CREATE</a>
-                                    </div>
-                                </div>
-                                <div class="clearfix"></div>
-                            </form>
+                        <div class="row" style="border-bottom: 1px solid #eee;">
+                            <div class="col-sm-10">
+                                <h6 class="item-title"><i class="fa fa-sliders"></i>ALL CANDIDATES</h6>
+                            </div>
+                            <div class="col-sm-2">
+                                <button class="btn btn-primary btn-sm" style="margin: 5px 0 5px 40px;padding: 6px 12px;" data-toggle="modal" data-target="#addCandidateModal"><i class="fa fa-plus"></i>  Add Candidate</button>
+                            </div>
                         </div>
-                        <div class="clearfix"></div>
-                    </div>
-                </div>
-                <div class="col-sm-9">
-                    <div class="dash-item first-dash-item">
-                        <h6 class="item-title"><i class="fa fa-sliders"></i>ALL CANDIDATES</h6>
                         <div class="inner-item">
 
                             <table id="attendenceDetailedTable" class="display responsive nowrap" cellspacing="0"
@@ -322,7 +204,7 @@
                                     <tr>
                                         <td>{{ $value->id }}</td>
                                         <td>{{ $value->name }}</td>
-										<td style="padding: 0px;">{{ $value->phone }}{{ (empty($value->email) ? '': '</br>'.$value->email) }}</td>
+										<td style="padding: 0px;">{{ $value->phone }}<br>{{ (empty($value->email) ? '': $value->email) }}</td>
                                         <td>{{ $value->department }}</td>
                                         <td>{{ $value->user_name }}</td>
                                         <td>{{ $value->password }}</td>
@@ -367,9 +249,9 @@
                                             <a class="edit {{ ($value->status == 0) ? '' : 'disabled' }}"><i class="fa fa-edit"></i></a>
                                             <a class="edit {{ ($value->status == 2) ? '' : 'disabled' }}"><i class="fa fa-tasks"></i></a>
                                             <a class="edit" href="#" title="View Result" data-toggle="modal" data-target="#viewDetailModal"><i class="fa fa-quora"></i></a>
-											<a class="info" target="_blank" href={{ $value->resume }} title="View Resume" ><i class="fa fa-file"></i></a>
+											<a class="info" target="_blank" href="{{ asset('uploads/resume/'.$value->resume) }}" title="View Resume" ><i class="fa fa-file"></i></a>
 											
-											<a class="delete {{ ($value->status == 0) ? '' : 'disabled' }}" href="" c_id="{{ $value->candidate_id }}" title="Delete" data-toggle="modal" data-target="#deleteDetailModal"><i
+											<a class="delete {{ ($value->status == 0) ? '' : 'disabled' }}" href="" c_id="{{ $value->id }}" title="Delete" data-toggle="modal" data-target="#deleteDetailModal"><i
 											class="fa fa-trash"></i></a>
                                         </td>
                                     </tr>
@@ -389,6 +271,144 @@
     <div class="dash-footer col-lg-12">
         <div class="col-lg-6">
             <p>Copyright JKSOL</p>
+        </div>
+    </div>
+
+
+    <!--Add Candidate modal-->
+    <div id="addCandidateModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title"><i class="fa fa-plus"></i>Add CANDIDATE</h4>
+                </div>
+                <div class="modal-body" style="padding: 0;">
+                    <div class="dash-item first-dash-item">
+                        {{-- <h6 class="item-title"><i class="fa fa-plus-circle"></i>ADD CANDIDATE</h6> --}}
+                        <div class="inner-item">
+                            <form id="add_candidate_form" method="post" enctype="multipart/form-data">
+                                <div class="dash-form">
+
+                                    <label class="clear-top-margin"><i class="fa fa-tasks"></i>NAME</label>
+                                    <input placeholder="Enter Candidate Name" name="name">
+
+                                    <label><i class="fa fa-tasks"></i>GENDER</label>
+                                    <select name="gender">
+                                        <option value="">Select Gender</option>
+                                        <option value="male">Male</option>
+                                        <option value="female">Female</option>
+                                    </select>
+
+                                    <label><i class="fa fa-tasks"></i>EMAIL</label>
+                                    <input type="email" placeholder="Enter Email" name="email">
+
+
+                                    <label><i class="fa fa-tasks"></i>MOBILE NUMBER</label>
+                                    <input type="number" placeholder="Enter Mobile Number" name="phone">
+
+                                    <label><i class="fa fa-tasks"></i>DEPARTMENT</label>
+                                    <input placeholder="Enter Department" name="department">
+
+
+                                    <label><i class="fa fa-user-secret"></i>USERNAME</label>
+                                    <input placeholder="Enter Username" name="user_name">
+
+
+                                    <label><i class="fa fa-key"></i>PASSWORD</label>
+                                    <input placeholder="Enter Password" name="password">
+
+
+                                    <label><i class="fa fa-clock-o"></i>TIME ( MINUTE )</label>
+                                    <input type='number' placeholder="Enter Time in Minute" name="time">
+
+                                    <div>
+                                        <label><i class="fa fa-pencil"></i>TEST MODE</label>
+                                        <div class="custom-control custom-radio custom-control-inline">
+                                            <input type="radio" class="custom-control-input" id="defaultInline4"
+                                                    name="test_type" value="1">
+                                            <label class="custom-control-label color-gray" for="defaultInline4">Very
+                                                Easy</label>
+                                        </div>
+
+                                        <div class="custom-control custom-radio custom-control-inline">
+                                            <input type="radio" class="custom-control-input" id="defaultInline5"
+                                                    name="test_type" value="2">
+                                            <label class="custom-control-label color-gray"
+                                                    for="defaultInline5">Easy</label>
+                                        </div>
+
+                                        <div class="custom-control custom-radio custom-control-inline">
+                                            <input type="radio" class="custom-control-input" id="defaultInline6"
+                                                    name="test_type" value="3">
+                                            <label class="custom-control-label color-gray"
+                                                    for="defaultInline6">Medium</label>
+                                        </div>
+
+                                        <div class="custom-control custom-radio custom-control-inline">
+                                            <input type="radio" class="custom-control-input" id="defaultInline60"
+                                                    name="test_type" value="4">
+                                            <label class="custom-control-label color-gray"
+                                                    for="defaultInline60">Hard</label>
+                                        </div>
+
+                                        <div class="custom-control custom-radio custom-control-inline">
+                                            <input type="radio" class="custom-control-input" id="defaultInline61"
+                                                    name="test_type" value="5">
+                                            <label class="custom-control-label color-gray" for="defaultInline61">Very
+                                                Hard</label>
+                                        </div>
+
+                                        <label id="test_type-error" class="error" for="test_type"></label>
+                                    </div>
+
+                                    <label><i class="fa fa-key"></i>ADDRESS</label>
+                                    <textarea placeholder="Enter Address" name="address"></textarea>
+
+                                    <label><i class="fa fa-key"></i>EDUCATION</label>
+                                    <textarea placeholder="Enter Education" name="education"></textarea>
+
+                                    <label><i class="fa fa-file"></i>SKILL</label>
+                                    <input name="skill">
+
+                                    <label><i class="fa fa-file"></i>CURRENT SALARY</label>
+                                    <input type="number" name="current_salary">
+
+                                    <label><i class="fa fa-file"></i>EXPECTED SALARY</label>
+                                    <input type="number" name="expected_salary">
+
+                                    <label><i class="fa fa-tasks"></i>NOTICE PERIOD</label>
+                                    <select name="notice_period">
+                                        <option value="">Select Notice Period</option>
+                                        <option value="4">Immediate </option>
+                                        <option value="1">1 Month</option>
+                                        <option value="2">2 Month</option>
+                                        <option value="3">3 Month</option>
+                                    </select>
+
+                                    <label><i class="fa fa-file"></i>TOTAL EXPERIENCE</label>
+                                    <input name="total_experience">
+
+                                    <label><i class="fa fa-file"></i>Resume</label>
+                                    <input type="file" name="resume">
+
+                                    <div>
+                                        <a href="#" class="form-submit"><i class="fa fa-paper-plane"></i> CREATE</a>
+                                    </div>
+                                </div>
+                                <div class="clearfix"></div>
+                            </form>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button data-dismiss="modal" class="btn btn-default" type="button">Close</button>
+                </div>
+
+            </div>
         </div>
     </div>
 
@@ -448,7 +468,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary " data-dismiss="modal">Cancel</button>
-                        <button type="submit" name="deleteCandidateBtn" class="btn btn-danger form-delete-submit">Delete</button>
+                        <button type="submit" name="deleteCandidateBtn" class="btn btn-danger delete-candidate">Delete</button>
                     </div>
             </div>
         </div>
@@ -457,3 +477,7 @@
 </div>
 </div>
 @endsection
+
+@push('scripts')
+    @include('candidate-script')
+@endpush

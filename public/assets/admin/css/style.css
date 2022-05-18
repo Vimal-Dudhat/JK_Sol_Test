@@ -208,7 +208,7 @@ html, body {
 .dash-item .item-title{
 	font-weight: 700;
 	margin: 0;
-	border-bottom: 1px solid #eee;
+	/* border-bottom: 1px solid #eee; */
 	padding: 15px 30px;
 }
 .dash-item .item-title i {

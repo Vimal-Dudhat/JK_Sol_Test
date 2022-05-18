@@ -28,7 +28,7 @@
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
     <link href="{{asset('assets/admin/fonts/font-awesome/css/font-awesome.min.css')}}" rel="stylesheet" media="screen">
     <script type="text/javascript">
-        var base_url = 'aaaaaaaaaaaaaaaaaaaaa';
+        var base_url = "{{asset('assets/')}}";
     </script>
 
 </head>

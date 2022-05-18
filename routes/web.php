@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\CandidateController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,6 +27,9 @@ Route::group(['middleware' => 'auth'], function()
 {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
     Route::get('/logout', [DashboardController::class, 'logout'])->name('logout');
+
+    Route::post('/add/candidate', [CandidateController::class, 'store'])->name('add.candidate');
+    Route::post('/delete/candidate', [CandidateController::class, 'destroy'])->name('delete.candidate');
 
 });
 
