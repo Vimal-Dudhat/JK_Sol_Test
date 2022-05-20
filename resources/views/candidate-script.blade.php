@@ -175,7 +175,6 @@
 
     $(document).on('click','.form-edit-submit',function(){
        
-        console.log(1111111);
         
         $("#edit-candidate-form").submit();
 
@@ -218,7 +217,7 @@
                 notice_period: {
                     required: true
                 },
-                t_mode: {
+                test_type: {
                     required: true
                 }
             },
@@ -229,42 +228,30 @@
             },
             submitHandler: function(form) {
             
-                var form_data = $('#add_candidate_form').serialize();
+                var form_data = $('#edit-candidate-form').serialize();
 
-                showAlert();
                 $.ajax({
-                    url : '{{route("add.candidate")}}',
+                    url : '{{route("update.candidate")}}',
                     type: 'POST',
-                    data: new FormData( form ),
-                    processData: false,
-                    contentType: false
-                }).done(function(response){ //
+                    data: form_data,
+                }).done(function (response) { //
 
-                    // var response = JSON.parse(response);
-                    if(response.status) {
+                    if (response.status) {
 
-                        $('#add_candidate_form').trigger("reset");
-                        swal.close();
+                        //swal.close();
 
-                        swal({
-                            icon: 'success',
-                            title: response.msg,
-                            showConfirmButton: false,
-                            timer: 3000
-                        })
-
-                        location.reload();
+                        //swal({
+                        //    icon: 'success',
+                        //    title: response.msg,
+                        //    showConfirmButton: false,
+                        //    timer: 1500
+                        //})
+                        
+                        window.location.reload();
 
                     } else {
 
-                        swal.close();
-
-                        swal({
-                            icon: 'error',
-                            title: response.msg,
-                            showConfirmButton: false,
-                            timer: 3000
-                        })
+                        alert('fail');
                     }
                 });
             }

@@ -76,32 +76,32 @@
                                         <div>
                                             <label>TEST MODE</label>
                                             <div class="custom-control custom-radio custom-control-inline">
-                                                <input type="radio" class="custom-control-input" id="edefaultInline4" name="t_mode" value="1" <?php echo $candidate->test_type == '1' ? 'checked' : ''; ?>>
+                                                <input type="radio" class="custom-control-input" id="edefaultInline4" name="test_type" value="1" <?php echo $candidate->test_type == '1' ? 'checked' : ''; ?>>
                                                 <label class="custom-control-label color-gray" for="edefaultInline4">Very Easy</label>
                                             </div>
 
                                             <div class="custom-control custom-radio custom-control-inline">
-                                                <input type="radio" class="custom-control-input" id="edefaultInline5" name="t_mode" value="2" <?php echo $candidate->test_type == '2' ? 'checked' : ''; ?>>
+                                                <input type="radio" class="custom-control-input" id="edefaultInline5" name="test_type" value="2" <?php echo $candidate->test_type == '2' ? 'checked' : ''; ?>>
                                                 <label class="custom-control-label color-gray" for="edefaultInline5">Easy</label>
                                             </div>
 
                                             <div class="custom-control custom-radio custom-control-inline">
-                                                <input type="radio" class="custom-control-input" id="edefaultInline6" name="t_mode" value="3" <?php echo $candidate->test_type == '3' ? 'checked' : ''; ?>>
+                                                <input type="radio" class="custom-control-input" id="edefaultInline6" name="test_type" value="3" <?php echo $candidate->test_type == '3' ? 'checked' : ''; ?>>
                                                 <label class="custom-control-label color-gray" for="edefaultInline6">Medium</label>
                                             </div>
 
                                             <div class="custom-control custom-radio custom-control-inline">
-                                                <input type="radio" class="custom-control-input" id="edefaultInline7" name="t_mode" value="4" <?php echo $candidate->test_type == '4' ? 'checked' : ''; ?>>
+                                                <input type="radio" class="custom-control-input" id="edefaultInline7" name="test_type" value="4" <?php echo $candidate->test_type == '4' ? 'checked' : ''; ?>>
                                                 <label class="custom-control-label color-gray" for="edefaultInline7">Hard</label>
                                             </div>
 
                                             <div class="custom-control custom-radio custom-control-inline">
-                                                <input type="radio" class="custom-control-input" id="edefaultInline8" name="t_mode" value="5" <?php echo $candidate->test_type == '5' ? 'checked' : ''; ?>>
+                                                <input type="radio" class="custom-control-input" id="edefaultInline8" name="test_type" value="5" <?php echo $candidate->test_type == '5' ? 'checked' : ''; ?>>
                                                 <label class="custom-control-label color-gray" for="edefaultInline8">Very Hard</label>
                                             </div>
 
                                             <input type="hidden" name="que_id" id='que_id' value='<?php echo $candidate->id; ?>' />
-                                            <label id="t_mode-error" class="error" for="t_mode"></label>
+                                            <label id="test_type-error" class="error" for="test_type"></label>
                                         </div>
                                     </div>
                                 </div>
