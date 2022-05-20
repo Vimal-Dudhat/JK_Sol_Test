@@ -84,9 +84,12 @@ class CandidateController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Request $request)
     {
-        //
+        $candidate = User::find($request->c_id);
+        $view = view("edit-candidate")->with('candidate', $candidate)->render();
+        
+        return response()->json(['status' => 1,'html' => $view]);
     }
 
     /**
@@ -98,7 +101,7 @@ class CandidateController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        dd($id);
     }
 
     /**

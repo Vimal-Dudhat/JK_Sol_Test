@@ -157,3 +157,17 @@
         });
     });
 </script>
+
+<script>
+    $(document).on('click','.edit-candidate',function(){
+        var c_id = $(this).data('c_id');
+        $.ajax({
+            url: '{{route("edit.candidate")}}',
+            type: 'get',
+            data: {c_id: c_id},
+            success: function(response){
+                $('.edit-candidate-modal').html(response.html);
+            }
+        });
+    })
+</script>

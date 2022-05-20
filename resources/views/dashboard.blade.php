@@ -246,7 +246,7 @@
                                         </td>
 										<td>{{ date('d M, Y',strtotime($value->created_at)) }}</td>
                                         <td class="action-link">
-                                            <a class="edit {{ ($value->status == 0) ? '' : 'disabled' }}"><i class="fa fa-edit"></i></a>
+                                            <a class="edit-candidate edit {{ ($value->status == 0) ? '' : 'disabled' }}" data-c_id="{{ $value->id }}"><i class="fa fa-edit"></i></a>
                                             <a class="edit {{ ($value->status == 2) ? '' : 'disabled' }}"><i class="fa fa-tasks"></i></a>
                                             <a class="edit" href="#" title="View Result" data-toggle="modal" data-target="#viewDetailModal"><i class="fa fa-quora"></i></a>
 											<a class="info" target="_blank" href="{{ asset('uploads/resume/'.$value->resume) }}" title="View Resume" ><i class="fa fa-file"></i></a>
@@ -413,7 +413,7 @@
     </div>
 
     <!--Edit details modal-->
-    <div id="editDetailModal" class="modal fade" role="dialog">
+    <div id="editCandidateModal" class="modal fade" role="dialog">
         <div class="modal-dialog">
             <!-- Modal content-->
             <div class="modal-content">
@@ -421,7 +421,7 @@
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                     <h4 class="modal-title"><i class="fa fa-edit"></i>EDIT CANDIDATE DETAILS</h4>
                 </div>
-                <div class="modal-body">
+                <div class="modal-body edit-candidate-modal">
                     <span class="fa fa-spinner fa-spin"></span> Loading...
                 </div>
 

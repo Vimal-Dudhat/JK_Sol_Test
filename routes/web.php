@@ -29,6 +29,8 @@ Route::group(['middleware' => 'auth'], function()
     Route::get('/logout', [DashboardController::class, 'logout'])->name('logout');
 
     Route::post('/add/candidate', [CandidateController::class, 'store'])->name('add.candidate');
+    Route::get('/edit/candidate', [CandidateController::class, 'edit'])->name('edit.candidate');
+    Route::post('/update/candidate', [CandidateController::class, 'update'])->name('update.candidate');
     Route::post('/delete/candidate', [CandidateController::class, 'destroy'])->name('delete.candidate');
 
 });
