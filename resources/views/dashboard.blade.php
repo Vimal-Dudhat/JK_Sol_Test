@@ -279,7 +279,7 @@
     <div id="addCandidateModal" class="modal fade" role="dialog">
         <div class="modal-dialog">
             <!-- Modal content-->
-            <div class="modal-content">
+            <div class="modal-content" style="width: 80%;">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                     <h4 class="modal-title"><i class="fa fa-plus"></i>Add CANDIDATE</h4>
@@ -416,12 +416,12 @@
     <div id="editCandidateModal" class="modal fade" role="dialog">
         <div class="modal-dialog">
             <!-- Modal content-->
-            <div class="modal-content">
+            <div class="modal-content" style="width: 80%;">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                     <h4 class="modal-title"><i class="fa fa-edit"></i>EDIT CANDIDATE DETAILS</h4>
                 </div>
-                <div class="modal-body edit-candidate-modal">
+                <div class="modal-body edit-candidate-modal" style="padding: 0;">
                     <span class="fa fa-spinner fa-spin"></span> Loading...
                 </div>
 
@@ -434,7 +434,7 @@
     </div>
 
 
-    <!--Edit details modal-->
+    <!--View details modal-->
     <div id="viewDetailModal" class="modal fade" role="dialog">
         <div class="modal-dialog">
             <!-- Modal content-->

@@ -140,7 +140,7 @@
 
     $('.delete-candidate').click(function(){
 
-        candidateId=$('#delete_c_id').val(c_id);
+        var candidateId=$('#delete_c_id').val(c_id);
 
         $.ajax({
             url: '{{route("delete.candidate")}}',
@@ -161,6 +161,7 @@
 <script>
     $(document).on('click','.edit-candidate',function(){
         var c_id = $(this).data('c_id');
+        $('#editCandidateModal').modal('show');
         $.ajax({
             url: '{{route("edit.candidate")}}',
             type: 'get',
@@ -168,6 +169,106 @@
             success: function(response){
                 $('.edit-candidate-modal').html(response.html);
             }
+        });
+    });
+
+
+    $(document).on('click','.form-edit-submit',function(){
+       
+        console.log(1111111);
+        
+        $("#edit-candidate-form").submit();
+
+
+        $("#edit-candidate-form").validate({
+            rules: {
+                name: {
+                    required: true
+                },
+                phone: {
+                    required: true
+                },
+                user_name: {
+                    required: true,
+                },
+                department: {
+                    required: true
+                },
+                current_salary: {
+                    required: true
+                },
+                total_experience: {
+                    required: true
+                },
+                time: {
+                    required: true
+                },
+                education: {
+                    required: true
+                },
+                password: {
+                    required: true
+                },
+                skill: {
+                    required: true
+                },
+                expected_salary: {
+                    required: true
+                },
+                notice_period: {
+                    required: true
+                },
+                t_mode: {
+                    required: true
+                }
+            },
+            messages: {
+                user_name: {
+                    remote: "this username already exist."
+                }
+            },
+            submitHandler: function(form) {
+            
+                var form_data = $('#add_candidate_form').serialize();
+
+                showAlert();
+                $.ajax({
+                    url : '{{route("add.candidate")}}',
+                    type: 'POST',
+                    data: new FormData( form ),
+                    processData: false,
+                    contentType: false
+                }).done(function(response){ //
+
+                    // var response = JSON.parse(response);
+                    if(response.status) {
+
+                        $('#add_candidate_form').trigger("reset");
+                        swal.close();
+
+                        swal({
+                            icon: 'success',
+                            title: response.msg,
+                            showConfirmButton: false,
+                            timer: 3000
+                        })
+
+                        location.reload();
+
+                    } else {
+
+                        swal.close();
+
+                        swal({
+                            icon: 'error',
+                            title: response.msg,
+                            showConfirmButton: false,
+                            timer: 3000
+                        })
+                    }
+                });
+            }
+
         });
     })
 </script>

@@ -58,7 +58,7 @@ class CandidateController extends Controller
         $user->current_salary = $request->current_salary;
         $user->expected_salary = $request->expected_salary;
         $user->notice_period = $request->notice_period;
-        $user->total_Experience = $request->total_Experience;
+        $user->total_experience = $request->total_experience;
         $user->role = 2;
         $user->save();
 
@@ -99,9 +99,9 @@ class CandidateController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        dd($id);
+        dd($request->all());
     }
 
     /**
