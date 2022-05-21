@@ -229,13 +229,13 @@
                 }
             },
             submitHandler: function() {
-                var form_data_1 = $('#edit-candidate-form').serialize();
+                var form_data = $('#edit-candidate-form').serialize();
                 // alert(form_data)
 
                 $.ajax({
                     url : '{{route("update.candidate")}}',
                     type: 'POST',
-                    data: {name:'meet'},
+                    data: form_data,
                     processData: false,
                     contentType: 'Application/json',
                 }).then(function (response) { //
