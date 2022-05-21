@@ -115,6 +115,6 @@
     </div>
 
     <div style="margin: 0 0 8px 45px;">
-        <a class="btn btn-success form-edit-submit">Update</a>
+        <button class="btn btn-success form-edit-submit" type="submit" >Update</button>
     </div>
 </form>

@@ -167,19 +167,21 @@
             type: 'get',
             data: {c_id: c_id},
             success: function(response){
-                $('.edit-candidate-modal').html(response.html);
+                $('.edit-candidate-modal').append(response.html);
             }
         });
     });
 
 
-    $(document).on('click','.form-edit-submit',function(){
-       
+    $(document).on('submit','#edit-candidate-form',function(e){
+        e.preventDefault();
+
+        var form_data = $('#edit-candidate-form').serialize();
         
-        $("#edit-candidate-form").submit();
+        
 
 
-        $("#edit-candidate-form").validate({
+        $(this).validate({
             rules: {
                 name: {
                     required: true
@@ -226,15 +228,17 @@
                     remote: "this username already exist."
                 }
             },
-            submitHandler: function(form) {
-            
-                var form_data = $('#edit-candidate-form').serialize();
+            submitHandler: function() {
+                var form_data_1 = $('#edit-candidate-form').serialize();
+                // alert(form_data)
 
                 $.ajax({
                     url : '{{route("update.candidate")}}',
                     type: 'POST',
-                    data: form_data,
-                }).done(function (response) { //
+                    data: {name:'meet'},
+                    processData: false,
+                    contentType: 'Application/json',
+                }).then(function (response) { //
 
                     if (response.status) {
 
@@ -253,7 +257,11 @@
 
                         alert('fail');
                     }
-                });
+                })
+                .catch(function(response){
+                    alert(response,'================================================')
+                })
+                ;
             }
 
         });
