@@ -31,7 +31,7 @@ Route::group(['middleware' => 'auth'], function()
     Route::post('/add/candidate', [CandidateController::class, 'store'])->name('add.candidate');
     Route::get('/edit/candidate', [CandidateController::class, 'edit'])->name('edit.candidate');
     Route::post('/update/candidate', [CandidateController::class, 'update'])->name('update.candidate');
+    Route::get('/view/result', [CandidateController::class, 'viewResult'])->name('view.result');
     Route::post('/delete/candidate', [CandidateController::class, 'destroy'])->name('delete.candidate');
 
 });
-

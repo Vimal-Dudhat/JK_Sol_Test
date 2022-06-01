@@ -123,4 +123,10 @@ class CandidateController extends Controller
         $user->delete();
         return response()->json(['status' => 1,'msg' => 'Candidate Deleted Successfully..']);
     }
+
+
+    public function viewResult(Request $request)
+    {
+        dd($request->all());
+    }
 }

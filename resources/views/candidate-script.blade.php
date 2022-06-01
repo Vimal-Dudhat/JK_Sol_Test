@@ -160,14 +160,14 @@
 
 <script>
     $(document).on('click','.edit-candidate',function(){
-        var c_id = $(this).data('c_id');
+        var c_id = $(this).parent('td').data('c_id');
         $('#editCandidateModal').modal('show');
         $.ajax({
             url: '{{route("edit.candidate")}}',
             type: 'get',
             data: {c_id: c_id},
             success: function(response){
-                $('.edit-candidate-modal').append(response.html);
+                $('.edit-candidate-modal').html(response.html);
             }
         });
     });
@@ -266,4 +266,19 @@
 
         });
     })
+</script>
+
+<script>
+    $(document).on('click','.view-test-result',function(){
+        var c_id = $(this).parent('td').data('c_id');
+        $('#viewResultModal').modal('show');
+        $.ajax({
+            url: '{{route("view.result")}}',
+            type: 'get',
+            data: {c_id: c_id},
+            success: function(response){
+                $('.edit-candidate-modal').append(response.html);
+            }
+        });
+    });
 </script>

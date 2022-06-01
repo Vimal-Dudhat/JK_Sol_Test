@@ -200,16 +200,16 @@
                                 </thead>
                                 <tbody>
 
-                                @foreach ($users as $key => $value)                                    
+                                @foreach ($users as $key => $user)                                    
                                     <tr>
-                                        <td>{{ $value->id }}</td>
-                                        <td>{{ $value->name }}</td>
-										<td style="padding: 0px;">{{ $value->phone }}<br>{{ (empty($value->email) ? '': $value->email) }}</td>
-                                        <td>{{ $value->department }}</td>
-                                        <td>{{ $value->user_name }}</td>
-                                        <td>{{ $value->password }}</td>
+                                        <td>{{ $user->id }}</td>
+                                        <td>{{ $user->name }}</td>
+										<td style="padding: 0px;">{{ $user->phone }}<br>{{ (empty($user->email) ? '': $user->email) }}</td>
+                                        <td>{{ $user->department }}</td>
+                                        <td>{{ $user->user_name }}</td>
+                                        <td>{{ $user->password }}</td>
                                         <td><?php
-                                            switch ($value->test_type) {
+                                            switch ($user->test_type) {
 
                                                 case 1:
                                                     echo "Very Easy";
@@ -230,7 +230,7 @@
                                             ?>
                                         </td>
                                         <td><?php
-                                            switch ($value->status) {
+                                            switch ($user->status) {
 
                                                 case 0:
                                                     echo "Pending";
@@ -239,19 +239,19 @@
                                                     echo "Start";
                                                     break;
                                                 case 2:
-                                                    echo $value->score;
+                                                    echo $user->score;
                                                     break;
                                             }
                                             ?>
                                         </td>
-										<td>{{ date('d M, Y',strtotime($value->created_at)) }}</td>
-                                        <td class="action-link">
-                                            <a class="edit-candidate edit {{ ($value->status == 0) ? '' : 'disabled' }}" data-c_id="{{ $value->id }}"><i class="fa fa-edit"></i></a>
-                                            <a class="edit {{ ($value->status == 2) ? '' : 'disabled' }}"><i class="fa fa-tasks"></i></a>
-                                            <a class="edit" href="#" title="View Result" data-toggle="modal" data-target="#viewDetailModal"><i class="fa fa-quora"></i></a>
-											<a class="info" target="_blank" href="{{ asset('uploads/resume/'.$value->resume) }}" title="View Resume" ><i class="fa fa-file"></i></a>
+										<td>{{ date('d M, Y',strtotime($user->created_at)) }}</td>
+                                        <td class="action-link" data-c_id="{{ $user->id }}">
+                                            <a class="edit-candidate edit {{ ($user->status == 0) ? '' : 'disabled' }}"><i class="fa fa-edit"></i></a>
+                                            <a class="edit {{ ($user->status == 2) ? '' : 'disabled' }}" ><i class="fa fa-tasks"></i></a>
+                                            <a class="view-test-result edit" href="#" title="View Result"><i class="fa fa-quora"></i></a>
+											<a class="info" target="_blank" href="{{ asset('uploads/resume/'.$user->resume) }}" title="View Resume" ><i class="fa fa-file"></i></a>
 											
-											<a class="delete {{ ($value->status == 0) ? '' : 'disabled' }}" href="" c_id="{{ $value->id }}" title="Delete" data-toggle="modal" data-target="#deleteDetailModal"><i
+											<a class="delete {{ ($user->status == 0) ? '' : 'disabled' }}" href="" c_id="{{ $user->id }}" title="Delete" data-toggle="modal" data-target="#deleteDetailModal"><i
 											class="fa fa-trash"></i></a>
                                         </td>
                                     </tr>
@@ -435,7 +435,7 @@
 
 
     <!--View details modal-->
-    <div id="viewDetailModal" class="modal fade" role="dialog">
+    <div id="viewResultModal" class="modal fade" role="dialog">
         <div class="modal-dialog">
             <!-- Modal content-->
             <div class="modal-content">
